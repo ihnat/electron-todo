@@ -1,0 +1,14 @@
+{
+  "name": "videoinfo",
+  "version": "1.0.0",
+  "description": "learning electorn",
+  "main": "index.js",
+  "scripts": {
+    "electron": "electron ."
+  },
+  "author": "ihnat",
+  "license": "ISC",
+  "dependencies": {
+    "electron": "^1.6.8"
+  }
+}

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>StrintMan</title>
+</head>
+<body>
+  <h1>Todo main</h1>
+  <p>List:</p>
+  <ul class="todo-list"></ul>
+</body>
+<script>
+let electron = require('electron');
+let {ipcRenderer} = electron;
+ipcRenderer.on('todo:add', (event, todo) => {
+  let todoItem = document.createElement('li');
+  todoItem.textContent = todo;
+  document.querySelector('.todo-list').appendChild(todoItem);
+});
+ipcRenderer.on('todo:clear', (event, todo) => {
+  let todoList = document.querySelector('.todo-list');
+  todoList.innerHTML = '';
+});
+</script>
+</html>
